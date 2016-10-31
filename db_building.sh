@@ -42,17 +42,17 @@ mysql --user=root --password=${db_root_password}<<_EOF_
   create database scm DEFAULT CHARACTER SET utf8;
   grant all on scm.* TO 'scm'@'%' IDENTIFIED BY '${scm_password}';
   create database amon DEFAULT CHARACTER SET utf8;
-  grant all on amon.* TO 'amon'@'%' IDENTIFIED BY 'BOQNZu22aRPWSgJvf/w7k5mbSNheFCcMwkRBCV4QCmY=';
+  grant all on amon.* TO 'amon'@'%' IDENTIFIED BY '${amon_password}';
   create database rmon DEFAULT CHARACTER SET utf8;
-  grant all on rmon.* TO 'rmon'@'%' IDENTIFIED BY 'ulkZ6jLsymBkj/sZiol2ZWXnYAK/W4XG93Divu7c2qI=';
+  grant all on rmon.* TO 'rmon'@'%' IDENTIFIED BY '${rmon_password}';
   create database metastore DEFAULT CHARACTER SET utf8;
-  grant all on metastore.* TO 'hive'@'%' IDENTIFIED BY 'pekgKENcdh1Ej2kcERaFTYcaPZgDPyevp66fV07OnTk=';
+  grant all on metastore.* TO 'hive'@'%' IDENTIFIED BY '${hive_password}';
   create database sentry DEFAULT CHARACTER SET utf8;
-  grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'Rn8dIr3KbEQpfjoiUeiMBu5ufZsNVEFY4WqDOm6KSNE=';
+  grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY '${sentry_password}';
   create database nav DEFAULT CHARACTER SET utf8;
-  grant all on nav.* TO 'nav'@'%' IDENTIFIED BY '15BpPxWCitVLDN5yKfqJ/iUciVk9yPyQiJLKUeyXOL4=';
+  grant all on nav.* TO 'nav'@'%' IDENTIFIED BY '${nav_password}';
   create database navms DEFAULT CHARACTER SET utf8;
-  grant all on navms.* TO 'navms'@'%' IDENTIFIED BY 'LrNAbS0cw4bHOqEfo2Y7Mf3ByBeE2iBz2rMDpddqZ5U=';
+  grant all on navms.* TO 'navms'@'%' IDENTIFIED BY '${navms_password}';
   FLUSH PRIVILEGES;
 _EOF_
 
@@ -63,6 +63,8 @@ tar zxvf mysql-connector-java-5.1.40.tar.gz
 sudo mkdir -p /usr/share/java
 sudo cp mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
 chmod 755 /usr/share/java/mysql-connector-java.jar
+mkdir -p /var/lib/oozie/
+chmod 755 /var/lib/oozie
 sudo cp mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /var/lib/oozie/mysql-connector-java.jar
 chmod 755 /var/lib/oozie/mysql-connector-java.jar
 
