@@ -4,6 +4,8 @@ set -o nounset # abort on unbound variable
 
 
 # Variables
+source password
+echo $scm_password
 db_root_password="${1}"
 #
 
