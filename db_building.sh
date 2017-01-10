@@ -45,8 +45,8 @@ mysql --user=root --password=${db_root_password}<<_EOF_
   grant all on amon.* TO 'amon'@'%' IDENTIFIED BY '${amon_password}';
   create database rman DEFAULT CHARACTER SET utf8;
   grant all on rman.* TO 'rman'@'%' IDENTIFIED BY '${rmon_password}';
-  create database metastore DEFAULT CHARACTER SET utf8;
-  grant all on metastore.* TO 'hive'@'%' IDENTIFIED BY '${hive_password}';
+  create database hivemetastore DEFAULT CHARACTER SET utf8;
+  grant all on hivemetastore.* TO 'hive'@'%' IDENTIFIED BY '${hive_password}';
   create database sentry DEFAULT CHARACTER SET utf8;
   grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY '${sentry_password}';
   create database nav DEFAULT CHARACTER SET utf8;
