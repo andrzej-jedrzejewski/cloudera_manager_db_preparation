@@ -51,12 +51,14 @@ mysql --user=root --password=${db_root_password}<<_EOF_
   grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY '${sentry_password}';
   create database navaudit DEFAULT CHARACTER SET utf8;
   grant all on navaudit.* TO 'navaudit'@'%' IDENTIFIED BY '${nav_password}';
-  create database navms DEFAULT CHARACTER SET utf8;
-  grant all on navms.* TO 'navms'@'%' IDENTIFIED BY '${navms_password}';
+  create database navmetastore DEFAULT CHARACTER SET utf8;
+  grant all on navmetastore.* TO 'navmetastore'@'%' IDENTIFIED BY '${navms_password}';
   create database oozie DEFAULT CHARACTER SET utf8;
   grant all on oozie.* TO 'oozie'@'%' IDENTIFIED BY '${oozie_password}';
   create database hue DEFAULT CHARACTER SET utf8;
-  grant all on hue.* TO 'hue'@'%' IDENTIFIED BY '${oozie_password}';
+  grant all on hue.* TO 'hue'@'%' IDENTIFIED BY '${hue_password}';
+  create database arcadia DEFAULT CHARACTER SET utf8;
+  grant all on arcadia.* TO 'arcadia'@'%' IDENTIFIED BY '${arcadia_password}';
   FLUSH PRIVILEGES;
 _EOF_
 
