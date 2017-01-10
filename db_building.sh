@@ -62,7 +62,7 @@ mysql --user=root --password=${db_root_password}<<_EOF_
   FLUSH PRIVILEGES;
 _EOF_
 
-/usr/share/cmf/schema/scm_prepare_database.sh mysql scm scm "OQ319PngYUD3+anMD6TTOYI+wPNvyfzJyJHly6HZupk="
+/usr/share/cmf/schema/scm_prepare_database.sh mysql scm scm "${scm_password}"
 
 wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
 tar zxvf mysql-connector-java-5.1.40.tar.gz
